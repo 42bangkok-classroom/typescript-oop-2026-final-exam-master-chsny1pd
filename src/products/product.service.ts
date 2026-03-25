@@ -11,10 +11,10 @@ export class ProductService {
   data = fs.readFileSync(this.filePath, 'utf8');
   //pd = JSON.parse(this.data);
 
-  findAll(): ApiResponse<Product[]> {
+  findAll(): ApiResponse<Product> {
     return {
       success: true,
-      data: JSON.parse(this.data) as Product[],
+      data: JSON.parse(this.data) as Product,
       message: 'Fetched products successfully',
     };
   }
