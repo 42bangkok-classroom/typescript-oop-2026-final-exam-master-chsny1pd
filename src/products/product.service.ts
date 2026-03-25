@@ -1,11 +1,16 @@
 import { Injectable } from '@nestjs/common';
-//import * as fs from 'fs';
-//import * as path from 'path';
+import { ApiResponse } from '../interfaces/response.interface';
+import * as fs from 'fs';
+import * as path from 'path';
 
 @Injectable()
 export class ProductService {
-  //private filePath = path.join(process(cwd),"data","product.json")
-  getHello(): string {
-    return 'Hello World!';
+  private filePath = path.join(process.cwd(), 'data', 'product.json');
+  getHello(): ApiResponse<string> {
+    return {
+      success: true,
+      data: fs.readFileSync(this.filePath, 'utf8'),
+      message: 'Fetched products successfully',
+    };
   }
 }
