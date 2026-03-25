@@ -8,12 +8,12 @@ export class ProductService {
   private filePath = path.join(process.cwd(), 'data', 'product.json');
 
   data = fs.readFileSync(this.filePath, 'utf8');
-  pd = JSON.parse(this.data) as [];
+  //pd = JSON.parse(this.data);
 
-  findAll(): ApiResponse<[]> {
+  findAll(): ApiResponse<string> {
     return {
       success: true,
-      data: this.pd,
+      data: JSON.parse(this.data),
       message: 'Fetched products successfully',
     };
   }
