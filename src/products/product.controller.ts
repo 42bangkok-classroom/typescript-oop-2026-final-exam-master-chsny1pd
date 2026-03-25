@@ -7,6 +7,6 @@ export class ProductController {
 
   @Get()
   getHello() {
-    return this.appService.getHello();
+    return this.appService.findAll();
   }
 }

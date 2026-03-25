@@ -6,7 +6,7 @@ import * as path from 'path';
 @Injectable()
 export class ProductService {
   private filePath = path.join(process.cwd(), 'data', 'product.json');
-  getHello(): ApiResponse<string> {
+  findAll(): ApiResponse<string> {
     return {
       success: true,
       data: fs.readFileSync(this.filePath, 'utf8'),
