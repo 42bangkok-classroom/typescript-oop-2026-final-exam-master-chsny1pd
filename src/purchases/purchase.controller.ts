@@ -9,4 +9,8 @@ export class PurchaseController {
   findAll() {
     return this.purchaseService.findAll();
   }
+  @Get(':id')
+  findOne(id: number) {
+    return this.purchaseService.findOne(id);
+  }
 }

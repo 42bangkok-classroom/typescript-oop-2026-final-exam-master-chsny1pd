@@ -18,4 +18,14 @@ export class PurchaseService {
       message: 'Fetched products successfully',
     };
   }
+
+  findOne(id: number): ApiResponse<Purchase> | undefined {
+    if (id) {
+      return {
+        success: true,
+        data: JSON.parse(this.data) as Purchase,
+        message: 'Fetched products successfully',
+      };
+    }
+  }
 }
