@@ -14,4 +14,4 @@ import { ApiExceptionFilter } from '../common/api-exception.filter';
     },
   ],
 })
-export class ProductModule {}
+export class PurchaseModule {}

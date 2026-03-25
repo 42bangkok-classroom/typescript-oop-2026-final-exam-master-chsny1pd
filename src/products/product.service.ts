@@ -14,7 +14,7 @@ export class ProductService {
   findAll(): ApiResponse<Product> {
     return {
       success: true,
-      data: JSON.parse(this.data),
+      data: JSON.parse(this.data) as Product,
       message: 'Fetched products successfully',
     };
   }
